@@ -1,0 +1,96 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using LibraryManagement.Models
+<link href="~/Content/sb_style.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.css" rel="stylesheet" />
+<div id="viewport">
+    <div id="sidebar-wrapper">
+    </div>
+    <div id="sidebar">
+        <header>
+            <a href="#">VENTURE LIBRARY</a>
+        </header>
+        <span>
+            <img src="~/Image/adminside.jpg" class="img-circle profile-image" height="100px" width="250px" />
+        </span>
+
+        <ul class="nav">
+
+            <li>
+                <a href="@Url.Action("Index", "Book")"><i class="fa fa-book"></i> <span class="nav-label">Books</span> </a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Index", "BorrowedBook")"><i class="fa fa-book"></i> <span class="nav-label">Borrowed Books</span> </a>
+            </li>
+        </ul>
+    </div>
+    <div id="wrapper">
+
+      
+            
+            @Html.Partial("~/Areas/Admin/Views/Shared/_TopNavbar.cshtml")
+
+          
+            @RenderBody()
+           
+            @Html.Partial("~/Areas/Admin/Views/Shared/_Footer.cshtml")
+        </div>
+
+        @RenderSection("Scripts", required: false)
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Content -->
+        @*<div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#">
+                                    <i class="zmdi zmdi-notifications text-danger"></i>
+                                </a>
+                            </li>
+                            <li><a href="#">Test User</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <h1>Simple Sidebar</h1>
+                    <p>
+                        Make sure to keep all page content within the
+                        <code>#content</code>.
+                    </p>
+                </div>
+            </div>*@
+        @*<div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>*@
+    </div>
+
+

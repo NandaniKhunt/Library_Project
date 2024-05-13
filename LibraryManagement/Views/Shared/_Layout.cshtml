@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venture Library</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/frontend/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/frontend/owl-carousel/owl.transitions.css" rel="stylesheet" />
+    <link href="~/Content/frontend/bootstrap-select.css" rel="stylesheet" />
+    <link href="~/Content/frontend/meanmenu.css" rel="stylesheet" />
+    <link href="~/Content/frontend/main.css" rel="stylesheet" />
+    <link href="~/Content/frontend/responsive.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Crete+Round:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="~/Content/frontend/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header-area home-v2">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <p></p>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="top-right-menu navbar-right">
+                            <ul>
+                                @if (HttpContext.Current.Session["User"] == null)
+                                {
+                                    <li><a href="login-form" data-toggle="modal">Login</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="@Url.Action("Logout","Home")">Logout</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+    @RenderBody();
+        @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<LibraryManagement.Models.Database.Book>
+@*@model IEnumerable<LibraryManagement.Models.Database.Book>*@
+@*@model IEnumerable<LibraryManagement.Models.Custom.BookModel>*@
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <form method="post" class="form-horizontal">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content ">
+                            <div id="viewport">
+                                <center><img src="~/Image/lib.jpg" height="200px" width="300px" /></center>
+                            </div>
+                            @Html.RenderMessages()
+                            <div class="">
+                                <a class="btn btn-primary" href="@Url.Action("Add")">Add Book</a>
+                            </div>
+                            <div class="target-load" id="target-load">
+                                @Html.Partial("~/Areas/Admin/Views/Book/DisplayBook/_List.cshtml", Model)
+                            </div>
+                            <div class="text-center">
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "target-load" }))
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

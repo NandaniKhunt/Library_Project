@@ -1,0 +1,49 @@
+﻿@model IEnumerable<LibraryManagement.Models.Custom.BorrowBookModel>
+@*@model IEnumerable<LibraryManagement.Models.Database.BorrowedBook>*@
+
+<table class="table table-striped table-bordered dataTable" target=".target-load" border="1" align="center">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Student Name</th>
+            <th>Borrowed Date</th>
+            <th>Return Date</th>
+            <th>Penalty Amount</th>
+            <th>Action</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="gradeX">
+
+                <td>
+                    @item.BookName
+                </td>
+
+                <td>
+                    @item.StudentName
+                </td>
+                @*<td>
+                    @item.ContactNo
+                </td>
+                <td>
+                    @item.Email
+                </td>*@
+                <td>@item.BorrowDate</td>
+                <td>@item.ReturnDate</td>
+                <td>@item.PenaltyAmount</td>
+
+                <td>
+                    <a class="btn btn-success btn-circle" href="@Url.Content("~/admin/BorrowedBook/edit/" + item.Id)">
+                        Edit
+                    </a>
+                    <a class="btn btn-danger btn-circle btn-delete" href="@Url.Content("~/admin/BorrowedBook/delete/"+item.Id)">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

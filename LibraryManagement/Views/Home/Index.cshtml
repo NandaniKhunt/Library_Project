@@ -1,0 +1,57 @@
+﻿@model LibraryManagement.Models.Custom.LoginModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: lightcyan;
+        }
+        .login-form {
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            width: 70px;
+            height: 40px;
+            border-radius: 3px;
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+        .login-image {
+            width: 200px;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <img src="image/lib.jpg" alt="Library" class="login-image">
+            <form action="/Home/Login" method="post">
+                <h2 class="text-center">Login</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" name="UserName" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="btnLogin" class="btn-primary btn-block">Login</button>
+                    @*<button type="button" class="btn-primary btn-block" data-dismiss="modal">Close</button>*@
+                </div>
+            </form>
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,89 @@
+﻿@*@model LibraryManagement.Models.Database.BorrowedBook*@
+@model LibraryManagement.Models.Custom.BorrowBookModel
+
+@{
+    ViewBag.Title = "Add";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 class="text-center">Add BorrowBook</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal" method="post">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Book Name</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.BookName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <label class="col-lg-2 control-label">Student Name</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.StudentName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            @*<div class="form-group">
+                                <label class="col-lg-2 control-label">Contact No</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>*@
+
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Borrow Date</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.BorrowDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                                    @Html.ValidationMessageFor(model => model.BorrowDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Return Date</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.ReturnDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                                    @Html.ValidationMessageFor(model => model.ReturnDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button class="btn btn-primary" type="submit">Add</button>
+                                    <a class="btn btn-secondary" href="@Url.Content("~/admin/BorrowedBook")">Cancel</a>
+                                    @*<input type="submit" value="Create" class="btn btn-default" />*@
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*</div>*@
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

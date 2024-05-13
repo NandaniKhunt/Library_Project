@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2854b2951a544ef0a5f8016d0ec964f8" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryDBModel.Author" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Book" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.BorrowBook" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.BorrowedBook" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Role" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.Student" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.studentt" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryDBModel.User" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="LibraryDBModel.FK__Book__AuthorId__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK__BorrowBoo__BookI__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK__BorrowedB__BookI__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK__BorrowBoo__Stude__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK__BorrowedB__Stude__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK__Users__RoleId__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK__Student__UserId__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryDBModel.FK__studentt__UserId__60A75C0F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

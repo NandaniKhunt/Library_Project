@@ -1,0 +1,79 @@
+﻿@model LibraryManagement.Models.Database.Book
+@*@model LibraryManagement.Models.Custom.BookModel*@
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 class="text-center">Edit Book</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal" method="post">
+
+
+                            @*<div class="form-horizontal">
+                                <center> <h4>Edit Book</h4></center>
+                                <hr />*@
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.Id)
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Book Name</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Information</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Information, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Information, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Quantity</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Author Name</label>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Author.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Author.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button class="btn btn-primary" type="submit">Save changes</button>
+                                    <a class="btn btn-secondary" href="@Url.Content("~/admin/book")">Cancel</a>
+                                    @*<input type="submit" value="Save" class="btn btn-default" />*@
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*</div>*@
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
